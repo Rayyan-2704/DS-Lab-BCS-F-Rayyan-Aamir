@@ -3,7 +3,7 @@ Define attributes such as student name, exam date, and score within the class, a
 display exam details. As part of this exercise, intentionally omit the implementation of the copy constructor and
 copy assignment operator. Afterward, create an instance of the "Exam" class, generate a shallow copy, and observe any resulting issues? */
 
-/* The issue observed when the implementation of the custom copy constructor and copy assignment operator (needed for hard copy)
+/* The issue observed when the implementation of the custom copy constructor and copy assignment operator (needed for deep copy)
 are omitted is that the pointer members of both objects point to the same memory location, resulting in the compiler providing a shallow copy.
 Hence if the value of a pointer member of one object is changed, the same change is also reflected on the pointer member of the other object.
 Double deletion will also occur if a custom destructor is made to free up the memory. */
@@ -83,4 +83,5 @@ int main()
     e2.displayDetails();
 
     return 0;
+
 }
