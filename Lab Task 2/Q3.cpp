@@ -12,27 +12,32 @@ void avgMarks(double **arr, int *numCourses, int s);
 #include <iomanip>
 using namespace std;
 
-int main(){
+int main()
+{
     int students;
-    while(true){
+    while (true)
+    {
         cout << "Enter the number of students: ";
         cin >> students;
 
-        if(students > 0)
+        if (students > 0)
             break;
         cout << "Invalid number of students!" << endl;
     }
     cout << endl;
 
-    double **marks = new double*[students];
+    double **marks = new double *[students];
     int *numCourses = new int[students];
 
-    for(int i = 0; i < students; i++){
-        while(true){
+    for (int i = 0; i < students; i++)
+    {
+        while (true)
+        {
             cout << "Enter the number of courses for student " << (i + 1) << ": ";
             cin >> numCourses[i];
 
-            if(numCourses[i] > 0){
+            if (numCourses[i] > 0)
+            {
                 break;
             }
             cout << "Invalid number of courses!" << endl;
@@ -45,7 +50,7 @@ int main(){
     updateMarks(marks, numCourses, students);
     avgMarks(marks, numCourses, students);
 
-    for(int i = 0; i < students; i++)
+    for (int i = 0; i < students; i++)
         delete[] marks[i];
     delete[] marks;
     delete[] numCourses;
@@ -53,14 +58,18 @@ int main(){
     return 0;
 }
 
-void updateMarks(double **arr, int *numCourses, int s){
-    for(int i = 0; i < s; i++){
-        for(int j = 0; j < numCourses[i]; j++){
-            while(true){
+void updateMarks(double **arr, int *numCourses, int s)
+{
+    for (int i = 0; i < s; i++)
+    {
+        for (int j = 0; j < numCourses[i]; j++)
+        {
+            while (true)
+            {
                 cout << "Enter course " << (j + 1) << " marks out of 100 for student " << (i + 1) << ": ";
                 cin >> arr[i][j];
 
-                if(arr[i][j] >= 0 && arr[i][j] <= 100) 
+                if (arr[i][j] >= 0 && arr[i][j] <= 100)
                     break;
                 cout << "Invalid marks!" << endl;
             }
@@ -70,11 +79,14 @@ void updateMarks(double **arr, int *numCourses, int s){
     }
 }
 
-void avgMarks(double **arr, int *numCourses, int s){
+void avgMarks(double **arr, int *numCourses, int s)
+{
     cout << "\n------------ Displaying average marks of each student ------------\n";
-    for(int i = 0; i < s; i++){
+    for (int i = 0; i < s; i++)
+    {
         double total = 0.0, avg;
-        for(int j = 0; j < numCourses[i]; j++){
+        for (int j = 0; j < numCourses[i]; j++)
+        {
             total += arr[i][j];
         }
         avg = total / numCourses[i];
