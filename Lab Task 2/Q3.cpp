@@ -5,7 +5,7 @@ Design a program to handle marks of students in different courses using a jagged
 => Dynamically allocate memory for each student accordingly.
 => Calculate and display each student’s average marks. */
 
-void updateMarks(double **arr, int *numCourses, int s);
+void inputMarks(double **arr, int *numCourses, int s);
 void avgMarks(double **arr, int *numCourses, int s);
 
 #include <iostream>
@@ -47,7 +47,7 @@ int main()
         cout << endl;
     }
 
-    updateMarks(marks, numCourses, students);
+    inputMarks(marks, numCourses, students);
     avgMarks(marks, numCourses, students);
 
     for (int i = 0; i < students; i++)
@@ -58,7 +58,7 @@ int main()
     return 0;
 }
 
-void updateMarks(double **arr, int *numCourses, int s)
+void inputMarks(double **arr, int *numCourses, int s)
 {
     for (int i = 0; i < s; i++)
     {
