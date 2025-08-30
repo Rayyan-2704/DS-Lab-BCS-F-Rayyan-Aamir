@@ -8,49 +8,67 @@ Implement a program that dynamically allocates a 1D array of integers.
 #include <iostream>
 using namespace std;
 
-void updateValues(int *arr, int size){
-    int pos;
-    while(true){
-        cout << "\nEnter the index: ";
-        cin >> pos;
-        
-        if(pos < 0 || pos >= size){
-            cout << "Out of bounds!" << endl;
-        }
-        else break;
-    }
-    
-    cout << "Enter the value to be stored at index " << pos << ": ";
-    cin >> arr[pos];
-}
+bool updateArray(int *arr, int n, int pos);
+void printArray(int *arr, int n);
 
-void printArray(int *arr, int size){
-    cout << "\nPrinting the array:" << endl;
-    for(int i = 0; i < size; i++){
-        cout << "Index " << i << ": " << arr[i] << endl;
-    }
-}
-
-int main() {
+int main()
+{
     int size;
-    while(true){
+    while (true)
+    {
         cout << "Enter the size of the array: ";
         cin >> size;
-        
-        if(size <= 0){
-            cout << "Invalid size!" << endl;
-        }
-        else break;
-    }
-    
-    int *arr = new int[size];
-    for(int i = 0; i < size; i++)
-        arr[i] = 0;
-        
-    updateValues(arr, size);
-    printArray(arr, size);
 
+        if (size > 0)
+            break;
+        cout << "Invalid size!" << endl;
+    }
+
+    int *arr = new int[size];
+    for (int i = 0; i < size; i++)
+        arr[i] = 0;
+
+    while (true)
+    {
+        int pos;
+        char choice;
+        cout << "\nEnter the index of the array: ";
+        cin >> pos;
+
+        if (!updateArray(arr, size, pos))
+        {
+            cout << "Invalid index!" << endl;
+            continue;
+        }
+
+        cout << "Do you want to update the array further (Y/N)? ";
+        cin >> choice;
+
+        if (choice == 'N' || choice == 'n')
+            break;
+    }
+
+    printArray(arr, size);
     delete[] arr;
 
     return 0;
+}
+
+bool updateArray(int *arr, int n, int pos)
+{
+    if (pos < 0 || pos >= n)
+    {
+        return false;
+    }
+
+    cout << "Enter the value to be updated at index " << pos << ": ";
+    cin >> arr[pos];
+    return true;
+}
+
+void printArray(int *arr, int n)
+{
+    cout << "\n------------ Printing the array ------------\n";
+    for (int i = 0; i < n; i++)
+        cout << "Index " << i << ": " << arr[i] << endl;
 }
