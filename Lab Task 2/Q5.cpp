@@ -71,7 +71,7 @@ void initializeMatrix(int **arr, int r, int c)
     {
         for (int j = 0; j < c; j++)
         {
-            cout << "Row " << (i + 1) << ", Column " << (j + 1) << ": ";
+            cout << "Row " << i << ", Column " << j << ": ";
             cin >> arr[i][j];
         }
     }
