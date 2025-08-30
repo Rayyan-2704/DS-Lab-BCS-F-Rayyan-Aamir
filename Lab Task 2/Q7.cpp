@@ -11,7 +11,7 @@ Calculate:
 #include <climits>
 using namespace std;
 
-void updateSalaries(double **arr, int *numEmployees, int d);
+void inputSalaries(double **arr, int *numEmployees, int d);
 void highestSalaryAndAverage(double **arr, int *numEmployees, int d);
 
 int main()
@@ -49,7 +49,7 @@ int main()
         cout << endl;
     }
 
-    updateSalaries(salaries, numEmployees, departments);
+    inputSalaries(salaries, numEmployees, departments);
     highestSalaryAndAverage(salaries, numEmployees, departments);
 
     for (int i = 0; i < departments; i++)
@@ -60,7 +60,7 @@ int main()
     return 0;
 }
 
-void updateSalaries(double **arr, int *numEmployees, int d)
+void inputSalaries(double **arr, int *numEmployees, int d)
 {
     for (int i = 0; i < d; i++)
     {
