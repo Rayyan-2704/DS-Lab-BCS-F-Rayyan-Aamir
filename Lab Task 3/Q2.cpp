@@ -159,10 +159,11 @@ int main(){
     List mergedList(mergeListsBonus(listA.head, listB.head));
     cout << "\n---------------- Printing the Merged List ----------------\n";
 
-    listA.head = nullptr;  
+    listA.head = nullptr;
     listB.head = nullptr;
 
     mergedList.print_list();
 
     return 0;
+
 }
