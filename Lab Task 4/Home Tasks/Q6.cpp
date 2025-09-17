@@ -57,16 +57,16 @@ void combSort(int arr[], int n, long long &comparisonsCount, long long &swapsCou
         if(gap < 1)
             gap = 1;
         
-            isSwapped = false;
-            for(int i = 0; i + gap < n; i++){
-                comparisonsCount++;
-                if(arr[i] > arr[i + gap]){
-                    int temp = arr[i];
-                    arr[i] = arr[i + gap];
-                    arr[i + gap] = temp;
-                    swapsCount++;
-                    isSwapped = true;
-                }
+        isSwapped = false;
+        for(int i = 0; i + gap < n; i++){
+            comparisonsCount++;
+            if(arr[i] > arr[i + gap]){
+                int temp = arr[i];
+                arr[i] = arr[i + gap];
+                arr[i + gap] = temp;
+                swapsCount++;
+                isSwapped = true;
             }
+        }
     }
 }
