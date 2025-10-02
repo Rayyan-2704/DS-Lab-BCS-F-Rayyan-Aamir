@@ -15,7 +15,7 @@ void printNumbers(int n){
 
 int main(){
     int num;
-    do{
+    do {
         cout << "Enter number: ";
         cin >> num;
 
