@@ -10,12 +10,11 @@ int calculateFactorial(int n){
         return 1;
 
     return n * calculateFactorial(n - 1);
-
 }
 
 int main(){
     int num;
-    do{
+    do {
         cout << "Enter number: ";
         cin >> num;
 
