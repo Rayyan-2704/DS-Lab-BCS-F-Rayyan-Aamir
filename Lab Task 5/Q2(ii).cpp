@@ -15,16 +15,14 @@ int main(){
 }
 
 void functionA(int n){
-    if(n == 0)
-        return;
+    if(n == 0) return;
 
     cout << "Function A: " << n << endl;
     functionB(n - 1);
 }
 
 void functionB(int n){
-    if(n == 0)
-        return;
+    if(n == 0) return;
 
     cout << "Function B: " << n << endl;
     functionA(n - 1);
