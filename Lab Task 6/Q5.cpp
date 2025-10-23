@@ -6,7 +6,7 @@ postfix expression afterward. */
 #include <cmath>
 using namespace std;
 
-template<typename T>
+template <typename T>
 class Node {
 public:
     T data;
