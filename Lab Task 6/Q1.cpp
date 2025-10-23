@@ -10,7 +10,7 @@ using namespace std;
 
 #define MAX 50
 
-class Stack{
+class Stack {
     int arr[MAX];
     int top;
 
