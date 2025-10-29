@@ -1,3 +1,5 @@
+/* Radix Sort is a non-comparative, stable sorting algorithm that sorts integers by processing individual digits.
+Time Complexity: O(d × (n + b)) ≈ O(n) for fixed digit length, where d is the number of digits and b is the base (usually 10). */
 #include <iostream>
 using namespace std;
 
@@ -109,4 +111,5 @@ int main()
     }
 
     return 0;
+
 }
