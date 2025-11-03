@@ -10,8 +10,8 @@ int partition(int arr[], int low, int high)
     while (i < j)
     {
         // for decreasing order:
-        // while (arr[i] >= pivot && i <= high - 1) i++;
-        // while (arr[j] < pivot && j >= low + 1) j--;
+        // while (i <= high - 1 && arr[i] >= pivot) i++;
+        // while (j >= low + 1 && arr[j] < pivot) j--;
         
         while (i <= high - 1 && arr[i] <= pivot) i++;
         while (j >= low + 1 && arr[j] > pivot) j--;
@@ -50,4 +50,5 @@ int main()
     }
 
     return 0;
+
 }
