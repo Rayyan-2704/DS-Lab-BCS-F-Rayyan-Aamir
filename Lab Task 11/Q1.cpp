@@ -1,7 +1,8 @@
 #include <iostream>
 using namespace std;
 
-#define SIZE 11
+#define SIZE 50
+
 class Node
 {
 public:
@@ -43,9 +44,8 @@ public:
     void insert(string key, const string &v)
     {
         int index = hash(key);
-        Node *newNode = new Node(key, v);
         Node* curr = table[index];
-
+        
         while(curr) {
             if(curr->key == key) {
                 curr->value = v;
@@ -87,7 +87,7 @@ int main()
     Node *target = table.search("A");
     if (target)
     {
-        cout << "Found:" << endl << "Key:" << target->key << "\nValue:" << target->value;
+        cout << "Found:" << endl << "Key: " << target->key << endl << "Value: " << target->value << endl;
     }
 
     return 0;
