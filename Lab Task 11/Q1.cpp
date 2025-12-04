@@ -48,7 +48,8 @@ public:
         
         while(curr)
         {
-            if(curr->key == key) {
+            if(curr->key == key)
+            {
                 curr->value = v;
                 return;
             }
