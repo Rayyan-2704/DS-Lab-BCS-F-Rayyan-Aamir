@@ -46,7 +46,8 @@ public:
         int index = hash(key);
         Node* curr = table[index];
         
-        while(curr) {
+        while(curr)
+        {
             if(curr->key == key) {
                 curr->value = v;
                 return;
