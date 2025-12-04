@@ -78,13 +78,13 @@ public:
 
 int main()
 {
-    HashTable Htable;
-    Htable.insert("A", "aaaaaa");
-    Htable.insert("B", "bbbbb");
-    Htable.insert("C", "ccccc");
-    Htable.insert("A", "zzzzz");
+    HashTable table;
+    table.insert("A", "aaaaaa");
+    table.insert("B", "bbbbb");
+    table.insert("C", "ccccc");
+    table.insert("A", "zzzzz");
 
-    Node *target = Htable.search("A");
+    Node *target = table.search("A");
     if (target)
     {
         cout << "Found:" << endl << "Key:" << target->key << "\nValue:" << target->value;
